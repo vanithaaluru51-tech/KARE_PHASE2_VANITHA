@@ -1,0 +1,184 @@
+1
+// TO FIND THE NUMBER EVEN OR ODD
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		if(a % 2==0)
+			System.out.println("Even Number");
+		else
+			System.out.println("Odd Number");
+	}
+}
+
+2
+// i/p                    o/p
+// 2 2                  2 AND 2 ARE EQUAL
+// 1 54                 1 AND 54 ARE NOT EQUAL
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		if(a == b)
+			System.out.println(a + " AND " + b + " ARE EQUAL");
+		else
+			System.out.println(a + " AND " + b + " ARE NOT EQUAL");
+	}
+}
+
+3
+// i/p                   o/p
+// 18                 Eligible to Vote
+//  7                 Not Eligible to Vote
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int age = sc.nextInt();
+		if(age >= 18)
+			System.out.println("Eligible to Vote");
+		else
+			System.out.println("Not Eligible to Vote");
+	}
+}
+
+4
+// i/p                      o/p
+//  9                      Divisible by 3
+//  11                     Not Divisible by 3 and the Remainder is 2
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		if(a % 3 == 0)
+			System.out.println("Divisible by 3");
+		else
+			System.out.println("Not Divisible by 3 and Reaminder is " + a%3);
+	}
+}
+
+5
+// i/p                                    o/p
+//  12 10                               12 is Greater
+//  3   56                              56 is Greater
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a,b;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		if(a > b)
+			System.out.println(a + " is Greater");
+		else
+			System.out.println(b + " is Greater");
+	}
+}
+
+6
+// SMALLEST OF THREE NUMBERS
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a,b,c;
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
+		if(a < b && a < c)
+			System.out.print(a + " is Smallest");
+		else if(b < c)
+			System.out.print(b + " is Smallest");
+		else
+			System.out.print(c + " is Smallest");
+	}
+}
+
+7
+// i/p                        o/p
+//  3                          hi
+//  12                         hi
+//  20                         hello
+//  15                        hihello
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a;
+		a = sc.nextInt();
+		if (a%3==0 && a%5==0)
+			System.out.print("hihello");
+		else if(a%3==0)
+			System.out.print("hi");
+		else if(a%5==0)
+			System.out.print("hello");
+	}
+}
+//2ND METHOD
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a;
+		a = sc.nextInt();
+		if (a%3==0)
+			System.out.print("hi");
+		if(a%5==0)
+			System.out.print("hello");
+	}
+}
+
+8
+//Write a java program to check the given year is leap year or not
+//  i/p                         o/p
+//  2004                       Leap Year
+//  2000                       Leap Year
+//  2002                       Not a Leap Year
+//  1600                       Leap Year
+//  1900                       Not a Leap Year
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int year;
+		year = sc.nextInt();
+		if (year%400==0 || year%4==0 && year%100!=0)
+			System.out.print("Leap Year");
+		else
+			System.out.print("Not a Leap Year");
+	}
+}
+
+9
+//TO CHECK RAILWAY TIME IS VALID OR NOT
+//     i/p                          o/p
+//   0  0  0                       valid
+//  12  45  60                     invalid
+//  13  45  54                     valid
+//  24  6  4                       invalid
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int h = sc.nextInt();
+        int m = sc.nextInt();
+        int s = sc.nextInt();
+        if (h < 24 && m < 60 && s < 60)
+            System.out.println("valid");
+        else
+            System.out.println("invalid");
+    }
+}
