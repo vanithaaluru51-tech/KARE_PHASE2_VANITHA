@@ -1,5 +1,72 @@
+1
 class Main{
     public static void main(String[] args){
         System.out.print("cse \"KARE\" students");
     }
+}
+
+2
+//i/p.              o/p
+//\n.               \n
+class Main{
+    public static void main(String[] args){
+        System.out.print("\\n");
+    }
+}
+
+3
+//i/p.              o/p
+//20.               20
+//10.               10
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        System.out.print(a);
+    }
+}
+
+4
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		float f=obj.nextFloat();
+		System.out.println(f);
+	}
+}
+
+5
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		char ch = obj.next().charAt(0);
+		System.out.println("The character is :"+ ch);
+	}
+}
+
+6
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		float f=obj.nextFloat();
+		System.out.printf("%.2f",f);
+	}
+}
+
+7
+package CSE;
+import java.util.*;
+public class MAIN {
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		double  x=obj.nextDouble();
+		System.out.println(x);
+	}
 }
