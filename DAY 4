@@ -1,9 +1,9 @@
-I/P               O/P
-5                 *****
-                  *****
-                  *****
-                  *****
-                  *****
+1.I/P               O/P
+  5                 *****
+                    *****
+                    *****
+                    *****
+                    *****
 import java.util.*;
 class Main{
     public static void main(String[] args){
@@ -17,7 +17,7 @@ class Main{
     }
 }
 
-I/P                       O/P
+2.I/P                       O/P
 *                         row       col
 **                        0         0
 ***                       1         0 1 
