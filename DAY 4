@@ -56,3 +56,21 @@ class Main{
     }
 }
         
+5.I/P                         O/P
+ *                           0
+ ***                         0 1 2
+ *****                       0 1 2 3 4
+ ******                      0 1 2 3 4 5 6
+import java.util.*;       
+class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+        int i,row,col;
+        for(row=0;row<5;row++,System.out.println()){
+            for(col=0;col<2*row-1;col++)
+            System.out.print("*");
+        }
+    }
+}
+        
