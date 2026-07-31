@@ -35,4 +35,24 @@ class Main{
         }
     }
 }
+
+3.I/P                    O/P
+                       row               col
+*****                   0                0
+****                    1                0 1
+***                     2                0 1 2
+**                      3                0 1 2 3
+*                       4                0 1 2 3 4
+import java.util.*;       
+class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+        int i,row,col;
+        for(row=0;row<5;row++,System.out.println()){
+            for(col=0;col<n-row;col++)
+            System.out.print("*");
+        }
+    }
+}
         
