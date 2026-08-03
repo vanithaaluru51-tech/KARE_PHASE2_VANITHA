@@ -118,3 +118,23 @@ public class Main{
         System.out.println("NOT A HARSHAD NUMBER"); 
     }
 }
+
+// NEON NUMBER
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int square = n*n;
+        int sum=0,d;
+        while(square!=0){
+            d=square%10;
+            sum=sum+d;
+            square= square/10;
+        }
+        if(sum==n)
+        System.out.println("NEON NUMBER");
+        else
+        System.out.println("NOT A NEON NUMBER"); 
+    }
+}
