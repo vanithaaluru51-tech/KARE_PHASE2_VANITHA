@@ -99,3 +99,22 @@ public class Main{
         System.out.println("Not a Palindrome Number"); 
     }
 }
+// HARSHAD NUMBER
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int temp = n;
+        int sum=0,d;
+        while(n!=0){
+            d=n%10;
+            sum=sum+d;
+            n= n/10;
+        }
+        if(temp%sum==0)
+        System.out.println("HARSHAD NUMBER");
+        else
+        System.out.println("NOT A HARSHAD NUMBER"); 
+    }
+}
