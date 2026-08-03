@@ -28,3 +28,18 @@ public class Main{
         System.out.print("Reverse Number" +ans);
         }
     }
+
+3.// to reverse the given number without using right side formation
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int d;
+        while(n!=0){
+            d=n%10;
+        System.out.print(d);
+        n=n/10;
+        }
+    }
+}
