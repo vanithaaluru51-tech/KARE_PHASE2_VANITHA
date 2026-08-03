@@ -43,3 +43,23 @@ public class Main{
         }
     }
 }
+
+4.// to count even,odd digits in the given number
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int d,evencount=0,oddcount=0;
+        while(n!=0){
+            d=n%10;
+            if(d%2==0)
+            evencount++;
+            else
+            oddcount++;
+            n=n/10;
+        }
+        System.out.print("Odd digit count" +oddcount);
+        System.out.print("Even digit count" +evencount);
+        }
+    }
