@@ -1,1 +1,22 @@
-
+//STRONG NUMBER
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int temp = n;
+        int fact,sum=0,d;
+        while(n!=0){
+            fact=1;
+            d=n%10;
+            for(int i=1;i<=d;i++)
+            fact=fact*i;
+            sum=sum+fact;
+            n=n/10;
+        }
+        if(temp==sum)
+        System.out.print("Strong Number");
+        else
+        System.out.print("Not a Strong Number");
+    }
+}
