@@ -20,3 +20,27 @@ public class Main{
         System.out.print("Not a Strong Number");
     }
 }
+
+//ARMSTRONG NUMBER
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int temp = n,c=0,d,sum=0;
+        while(n!=0){
+            n=n/10;
+            c++;
+        }
+        n=temp;
+        while(n!=0){
+            d=n%10;
+            sum=sum+(int)Math.pow(d,c);
+            n=n/10;
+        }
+        if (temp==sum)
+        System.out.print("ARM STRONG NUMBER");
+        else
+        System.out.print("NOT AN ARMSTRONG NUMBER");
+        }
+}
