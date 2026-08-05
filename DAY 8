@@ -14,3 +14,18 @@
             System.out.print(arr[i]+" ");
         }
     }
+// Write java program to find the sum of array elements
+    import java.util.*;
+    public class Main{
+        public static void main(String[] args){
+            Scanner obj = new Scanner(System.in);
+            int n = obj.nextInt();
+            int arr[] = new int[n];
+            int i,sum=0;
+            for(i=0;i<n;i++){
+            arr[i]=obj.nextInt();
+            sum=sum+arr[i];
+            }
+            System.out.print("Sum of Array of Elements "+sum);
+        }
+    }
