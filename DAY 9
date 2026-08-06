@@ -102,3 +102,25 @@ public class Main{
         
     }
 }
+// To find the minimum value
+// I/P                  O/P
+// 5
+// 1 45 34 67 54        1
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int arr[] = new int[n];
+        int i;
+        for(i=0;i<n;i++)
+        arr[i]=obj.nextInt();
+    int min=Integer.MAX_VALUE;
+    for(i=0;i<n;i++){
+        if(arr[i]<min)
+        min=arr[i];
+    }
+    System.out.print("MINIMUM ELEMENT: "+min);
+        
+    }
+}
