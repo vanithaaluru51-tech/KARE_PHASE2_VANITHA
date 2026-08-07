@@ -1,1 +1,24 @@
+//Write a java program to add elements in the 2D array
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int r = obj.nextInt();
+        System.out.println("Enter number of rows: ");
+        int c = obj.nextInt();
+        System.out.println("Enter number of columns: ");
+        int arr[][]=new int[r][c];
+        int i,j,sum=0;
+        System.out.print("Enter array elements:");
+        for(i=0;i<r;i++){
+            for(j=0;j<c;j++){
+            
+            arr[i][j]=obj.nextInt();
+            sum=sum+arr[i][j];
+        }
+    }
+
+            System.out.print("SUM OF ELEMENTS: "+sum);
+        }
+    }
 
