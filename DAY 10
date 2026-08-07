@@ -1,24 +1,180 @@
-//Write a java program to add elements in the 2D array
+//1) write a java program to create and display the 2d array elements
 import java.util.*;
-public class Main{
-    public static void main(String[] args){
-        Scanner obj = new Scanner(System.in);
-        int r = obj.nextInt();
-        System.out.println("Enter number of rows: ");
-        int c = obj.nextInt();
-        System.out.println("Enter number of columns: ");
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int arr[][]=new int[r][c];
+        int i,j;
+        for(i=0;i<r;i++)
+        {
+            for(j=0;j<c;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        for(i=0;i<r;i++,System.out.println())
+        {
+        for(j=0;j<c;j++)
+        System.out.print(arr[i][j]+ " ");
+        }
+    }
+}
+//2)sum of array numbers
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no of rows:");
+        int r = sc.nextInt();
+        System.out.println("Enter no of columns:");
+        int c=sc.nextInt();
         int arr[][]=new int[r][c];
         int i,j,sum=0;
         System.out.print("Enter array elements:");
-        for(i=0;i<r;i++){
-            for(j=0;j<c;j++){
-            
-            arr[i][j]=obj.nextInt();
-            sum=sum+arr[i][j];
+        for(i=0;i<r;i++) 
+        {
+            for(j=0;j<c;j++)
+            {
+                arr[i][j]=sc.nextInt();
+                sum=sum+arr[i][j];
         }
     }
-
-            System.out.print("SUM OF ELEMENTS: "+sum);
-        }
+    System.out.print("SUM OF ELEMENTS : "+sum);
     }
+}
+//3)primary and secondary diagonal elements
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[][]=new int[n][n];
+        int i,j;
+        System.out.println("Enter array elements :");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("First Diagonal element");
+        for(i=0;i<n;i++)
+        System.out.print(arr[i][i]+ " ");
+        System.out.println("Second Diagonal element");
+        for(i=0;i<n;i++)
+        System.out.print(arr[i][n-1-i]+ " ");
+    }
+}
+//4)transpose the matrix
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int arr[][]=new int[r][c];
+        int tras[][]=new int[c][r];
+        int i,j;
+        System.out.println("Enter array elements :");
+        for(i=0;i<r;i++)
+        {
+            for(j=0;j<c;j++)
+            {
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        for(i=0;i<c;i++)
+        {
+            for(j=0;j<r;j++)
+            {
+                tras[i][j]=arr[j][i];
+            }
+        }
+        System.out.println("Transpose Matrix");
+        for(i=0;i<c;i++,System.out.println()){
+            for(j=0;j<r;j++){
+                System.out.print(tras[i][j]+" ");
+            }
+        }
+                
+    }
+}
+//5)write a java program to print length of string without using inbuilt method
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s = sc.nextLine();
+    int c = 0;
+    for(char ch:s.toCharArray())
+    c++;
+    System.out.print(c);
+    }
+}
+//6)slow and steady wins the race
+ //ch=
+ // if(ch==' ')// == ' '
+ //c++
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s = sc.nextLine();
+    int c = 0;
+    for(char ch:s.toCharArray())
+    if(ch == ' ')
+    c++;
+    System.out.print("Total Number of words: " + (c+1));
+    }
+}
+//7)to find the vowels count in the given string
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s =sc.nextLine().toUpperCase();
+    int c = 0;
+    for(char ch:s.toCharArray())
+        if(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
 
+    c++;
+    System.out.print("Total Number of VOWELS: " + (c));
+    }
+}
+//8)to find the constants count in the given string
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String s =sc.nextLine().toUpperCase();
+    int c = 0;
+    for(char ch:s.toCharArray())
+        if(!(ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'))
+
+    c++;
+    System.out.print("Total Number of constants: " + (c));
+    }
+}
+//9)write a java program to reverse the given string
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String str =sc.nextLine();
+    char ch[] = str.toCharArray();
+    int s = 0;
+    int e=ch.length - 1;
+    while(s<e){
+        char temp = ch[s];
+        ch[s] = ch[e];
+        ch[e] = temp;
+        s++;
+        e--;
+    }
+    System.out.println(new String(ch));
+    }
+    
+}
