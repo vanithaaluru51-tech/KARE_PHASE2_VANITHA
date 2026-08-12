@@ -117,3 +117,26 @@ public static void main(String[] args){
     System.out.print("Not a Perfect Cube");
 }
 }
+//write a java program to 
+//I/P                  O/P 
+// 5                  
+// 2 4 6 18 24        16.00
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        int i,sum=0,count=0,c=0;
+        int arr[]=new int[n];
+        for(i=0;i<n;i++){
+            arr[i]=obj.nextInt();
+            if(arr[i]%3==0 && arr[i]%2==0){
+                sum=sum+arr[i];
+                c++;
+            }
+        }
+        float avg=(float)(sum/c);
+        System.out.printf("%.2f",avg);
+    }
+}
+    
