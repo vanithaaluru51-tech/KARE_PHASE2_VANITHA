@@ -67,4 +67,30 @@ class Main{
         m.powerof2(n);
     }
 }
-        
+//write a java program to find the given number is Automporhic or not
+import java.util.*;
+class Main{
+    boolean am(){
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+        int temp=n,c=0;
+        int sqr=n*n;
+        while(n!=0){
+            n=n/10;
+            c++;
+        }
+        int power=(int)Math.pow(10,c);
+        if(sqr%power==temp)
+        return true;
+        else
+        return false;
+    }
+    public static void main(String[] args){
+    Main m = new Main();
+    boolean ans=m.am();
+    if(ans)
+    System.out.print("Automporphic Number");
+    else
+    System.out.print("Not an Automorhic Number");
+}
+}        
