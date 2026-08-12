@@ -94,3 +94,26 @@ class Main{
     System.out.print("Not an Automorhic Number");
 }
 }        
+//write a java program to check perfect cube or not
+import java.util.*;
+class Main{
+    boolean pc(int x){
+      int i;
+      for(i=1;i<=x/2;i++){
+          if(i*i*i==x){
+            return true;
+      }
+    }
+            return false;
+    }
+public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int n=obj.nextInt();
+         Main m=new Main();
+         boolean ans=m.pc(n);
+         if(ans)
+         System.out.print("Perfect Cube");
+       else
+    System.out.print("Not a Perfect Cube");
+}
+}
