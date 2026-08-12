@@ -67,7 +67,7 @@ class Main{
         m.powerof2(n);
     }
 }
-//write a java program to find the given number is Automporhic or not
+//write a java program to find the given number is Automporhic or not by using function with argument with return type
 import java.util.*;
 class Main{
     boolean am(){
