@@ -140,3 +140,24 @@ class Main{
     }
 }
     
+//write a java program to find the power of given number without using in-built method and by using function with argument,with return type 
+
+import java.util.*;
+class Main{
+    int powerofn(int b,int p){
+        int r=1;
+        while(p!=0){
+            r=r*b;
+            p--;
+        }
+        return r;
+    }
+    public static void main(String[] args){
+        Scanner obj=new Scanner(System.in);
+        int b=obj.nextInt();
+        int p=obj.nextInt();
+        Main m=new Main();
+        int ans=m.powerofn(b,p);
+        System.out.print(ans);
+    }
+}
