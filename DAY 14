@@ -141,3 +141,32 @@ class Main{
         
     }
 }
+//Order of parameters
+import java.util.*;
+class Main{
+    void print(int a,float b){
+        System.out.println(a+" "+b);
+    }
+    void print(float a,int b){
+        System.out.println(a+" "+b);
+    }
+    void print(char c,double d){
+        System.out.println(c+" "+d);
+    }
+    void print(double c,char d){
+        System.out.println(c+" "+d);
+    }
+    public static void main(String[] args){
+        Scanner obj = new Scanner(System.in);
+        int a = obj.nextInt();
+        float b= obj.nextFloat();
+        char c=obj.next().charAt(0);
+        double d=obj.nextDouble();
+        Main m = new Main();
+        m.print(a,b);
+        m.print(b,a);
+        m.print(c,d);
+        m.print(d,c);
+        
+    }
+}
