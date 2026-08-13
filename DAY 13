@@ -8,3 +8,15 @@ class Bike{
         Bike obj = new Bike();
     }
 }
+//CONSTRUCTORS(TO CHECK DEFAULT VALUES)
+import java.util.*;
+class Student{
+    int rollno;
+    String name;
+    Student(){
+        System.out.print(rollno+""+name);
+    }
+    public static void main(String[] args){
+        Student obj = new Student();
+    }
+}
