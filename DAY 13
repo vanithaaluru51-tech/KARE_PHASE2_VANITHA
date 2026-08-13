@@ -1,1 +1,10 @@
-
+//CONSTRUCTORS
+import java.util.*;
+class Bike{
+    Bike(){
+        System.out.print("Bike is started");
+    }
+    public static void main(String[] args){
+        Bike obj = new Bike();
+    }
+}
