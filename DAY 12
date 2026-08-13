@@ -1,0 +1,120 @@
+//1) Inheritance
+class Father
+{
+    void gen2()
+    {
+        System.out.println("Gold");
+    }
+}
+class Son extends Father
+{
+    void gen3()
+    {
+        System.out.println("Diamond");
+    }
+}
+class Main{ 
+    public static void main (String[] args) {
+    Son obj = new Son();
+    Father f = new Father();
+    f.gen2();
+    // f.gen3();// not accesses  
+    obj.gen3();
+    obj.gen2();
+    }
+}
+//2) multilevel Inheritance
+class Grandfather
+{
+    void gen1()
+    {
+        System.out.println("Money");
+    }
+}
+class Father extends Grandfather
+{
+    void gen2()
+    {
+        System.out.println("Gold");
+    }
+}
+class Son extends Father{
+    void gen3()
+    {
+        System.out.println("Diamond");
+    }
+}
+class Main{ 
+    public static void main (String[] args) {
+    Son s = new Son();
+    s.gen3();
+    s.gen2();
+    s.gen1();
+    Father f = new Father();
+    f.gen2();
+    f.gen1();
+    Grandfather g = new Grandfather();
+    g.gen1();
+    }
+}
+//3) hierarchical Inheritance
+class Father
+{
+    void gen2()
+    {
+        System.out.println("Gold");
+    }
+}
+class Son extends Father{
+void gen3(){
+    System.out.println("Diamond");
+  }
+}
+class Daughter extends Father{
+    void gen3(){
+System.out.println("Platimum");
+   }
+}
+class Main{
+    public static void main (String[] args) {
+    Son s = new Son();
+    s.gen3();
+    s.gen2();
+    Daughter f = new Daughter();
+    f.gen3();
+    f.gen2();
+    Father g = new Father();
+    g.gen2();
+    }
+}
+//4) hierarchical Inheritance
+class Father
+{
+    void gen2()
+    {
+        System.out.println("Gold");
+    }
+}
+class Son extends Father{
+void gen31(){
+    System.out.println("Diamond");
+  }
+}
+class Daughter extends Father{
+    void gen32(){
+System.out.println("Platimum");
+   }
+}
+class Main{
+    public static void main (String[] args) {
+    Son s = new Son();
+    s.gen31();
+    s.gen2();
+    Daughter d = new Daughter();
+    d.gen32();
+    d.gen2();
+    Father f = new Father();
+    f.gen2();
+    }
+}
+
