@@ -161,3 +161,58 @@ class Main{
         System.out.print(ans);
     }
 }
+8
+// CHECK POSITIVE OR NEGATIVE
+// FUNCTION WITH NO ARGUMENT AND NO RETURN TYPE
+import java.util.*;
+class Main {
+    void check() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n > 0)
+            System.out.print("Positive Number");
+        else if(n < 0)
+            System.out.print("Negative Number");
+        else
+            System.out.print("Zero");
+    }
+    public static void main(String[] args) {
+        Main m = new Main();
+        m.check();
+    }
+}
+
+9
+// FIND THE SUM OF TWO NUMBERS
+// FUNCTION WITH ARGUMENT AND NO RETURN TYPE
+import java.util.*;
+class Main {
+    void sum(int a, int b) {
+        int s = a + b;
+        System.out.print("Sum: " + s);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        Main m = new Main();
+        m.sum(a, b);
+    }
+}
+
+10
+// FIND THE SQUARE OF A NUMBER
+// FUNCTION WITH ARGUMENT AND RETURN TYPE
+import java.util.*;
+class Main {
+    int square(int n) {
+        return n * n;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Main m = new Main();
+        int ans = m.square(n);
+        System.out.print("Square: " + ans);
+    }
+}
