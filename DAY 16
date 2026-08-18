@@ -1,0 +1,48 @@
+// CREATING A DOUBLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next,prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1){
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.display();
+    }
+    Node first;
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null){
+            first = n;
+            return;
+        } else{
+            Node temp = first;
+            while (temp.next != null) 
+                temp = temp.next;
+            temp.next = n;
+            n.prev=temp;
+        }
+    }
+    void display() {
+        if (first == null){
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null){
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
