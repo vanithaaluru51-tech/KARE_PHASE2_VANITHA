@@ -70,3 +70,34 @@ public class MAIN {
 		System.out.println(x);
 	}
 }
+8
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        String s = sc.next();
+        System.out.println(a);
+        System.out.println(s);
+    }
+}
+
+9
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean b = sc.nextBoolean();
+        System.out.println(b);
+    }
+}
+
+10
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        System.out.println("The name is :" + name);
+    }
+}
