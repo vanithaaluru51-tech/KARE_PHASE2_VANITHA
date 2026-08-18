@@ -155,4 +155,22 @@ class Main{
         System.out.print("Not a Perfect Number"); 
     }
 }
-
+// WRITE A JAVA PROGRAM TO FIND THE PRODUCT OF DIGITS IN THE GIVEN NUMBER
+// i/p                  o/p
+// 1234                 Product of digits: 24
+// 256                  Product of digits: 60
+// 105                  Product of digits: 0
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int d, product = 1;
+        while(n != 0) {
+            d = n % 10;
+            product = product * d;
+            n = n / 10;
+        }
+        System.out.print("Product of digits: " + product);
+    }
+}
