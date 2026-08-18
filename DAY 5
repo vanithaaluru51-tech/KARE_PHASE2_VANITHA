@@ -168,3 +168,71 @@ class Main {
         }
     }
 }
+8
+//   i/p         o/p
+//    5         H   H
+//              H   H
+//              HHHHH
+//              H   H
+//              H   H
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int row = 0; row < n; row++, System.out.println()) {
+            for (int col = 0; col < n; col++) {
+                if (col == 0 || col == n - 1 || row == n / 2)
+                    System.out.print("H");
+                else
+                    System.out.print(" ");
+            }
+        }
+    }
+}
+
+9
+//   i/p         o/p
+//    5         X     X
+//                X  X
+//                 X 
+//               X   X
+//              X     X
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int row = 0; row < n; row++, System.out.println()) {
+            for (int col = 0; col < n; col++) {
+                if (row == col || row + col == n - 1)
+                    System.out.print("X");
+                else
+                    System.out.print(" ");
+            }
+        }
+    }
+}
+
+10
+//   i/p         o/p
+//    5         TTTTT
+//                T
+//                T
+//                T
+//                T
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for (int row = 0; row < n; row++, System.out.println()) {
+            for (int col = 0; col < n; col++) {
+                if (row == 0 || col == n / 2)
+                    System.out.print("T");
+                else
+                    System.out.print(" ");
+            }
+        }
+    }
+}
