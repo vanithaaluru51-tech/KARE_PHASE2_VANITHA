@@ -182,3 +182,22 @@ class Main {
             System.out.println("invalid");
     }
 }
+10
+// TO CHECK WHETHER THE GIVEN NUMBER IS POSITIVE, NEGATIVE OR ZERO
+// i/p                  o/p
+//  25                  Positive Number
+//  -10                 Negative Number
+//  0                   Zero
+import java.util.*;
+class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		if(a > 0)
+			System.out.println("Positive Number");
+		else if(a < 0)
+			System.out.println("Negative Number");
+		else
+			System.out.println("Zero");
+	}
+}
