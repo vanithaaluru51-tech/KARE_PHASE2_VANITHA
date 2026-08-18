@@ -1,33 +1,36 @@
-//STRONG NUMBER
+1
+// STRONG NUMBER
 import java.util.*;
-public class Main{
+class Main{
     public static void main(String[] args){
-        Scanner obj = new Scanner(System.in);
-        int n = obj.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         int temp = n;
         int fact,sum=0,d;
         while(n!=0){
             fact=1;
             d=n%10;
-            for(int i=1;i<=d;i++)
-            fact=fact*i;
-            sum=sum+fact;
+            for(int i = 1; i <= d; i++)
+            fact = fact * i;
+            sum = sum+fact;
             n=n/10;
         }
         if(temp==sum)
         System.out.print("Strong Number");
         else
-        System.out.print("Not a Strong Number");
+        System.out.print("Not a strong number");
     }
 }
 
-//ARMSTRONG NUMBER
+2
+// ARMSTRONG NUMBER
 import java.util.*;
-public class Main{
+class Main{
     public static void main(String[] args){
-        Scanner obj = new Scanner(System.in);
-        int n = obj.nextInt();
-        int temp = n,c=0,d,sum=0;
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n, c=0;
+        int sum=0,d;
         while(n!=0){
             n=n/10;
             c++;
@@ -38,36 +41,210 @@ public class Main{
             sum=sum+(int)Math.pow(d,c);
             n=n/10;
         }
-        if (temp==sum)
-        System.out.print("ARM STRONG NUMBER");
+        if(temp==sum)
+        System.out.print("Armstrong Number");
         else
-        System.out.print("NOT AN ARMSTRONG NUMBER");
-        }
+        System.out.print("Not a armstrong number");
+    }
 }
 
-//ADAM NUMBER
+3
+// ADAM NUMBER
 import java.util.*;
-public class Main{
+class Main{
     public static void main(String[] args){
-        Scanner obj = new Scanner(System.in);
-        int n = obj.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         int sn = n*n;
-        int rn=0,d,ans=0,srn=0;
+        int rn=0,srn,ans=0,d;
         while(n!=0){
-            d=n%10;
-            rn=rn*10+d;
+            d = n%10;
+            rn = rn*10+d;
             n=n/10;
         }
-        srn=rn*rn;
+        srn = rn * rn;
         while(srn!=0){
             d=srn%10;
             ans=ans*10+d;
             srn=srn/10;
         }
-        if(sn==ans)
-        System.out.print("ADAM NUMBER");
+        if(sn == ans)
+        System.out.print("Adam Number");
         else
-        System.out.print("NOT AN ADAM NUMBER");
+        System.out.print("Not a adam number");
+    }
+}
+
+4
+// AMICABLE PAIR
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int s1=0,s2=0;
+        for(int i=1; i<=n1/2;i++){
+            if(n1%i==0)
+            s1 = s1+i;
         }
-        
-} 
+        for(int i = 1; i<=n2/2;i++){
+            if(n2%i==0)
+            s2 = s2 + i;
+        }
+        if(s1 == n2 && s2 == n1)
+        System.out.print("Amicable Pair");
+        else
+        System.out.print("Not a amicable pair");
+    }
+}
+
+5
+// PRIME NUMBER
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c=0,flag=0,i;
+        if(n==1){
+            System.out.print("Neither prime nor composite");
+            return;
+        }
+        for(i = 2; i <= n/2; i++){
+            if(n%i==0){
+                c++;
+                flag=1;
+                System.out.print("Not a Prime Number");
+            }
+        }
+        if(flag==0)
+        System.out.print("Prime Number");
+    }
+}
+
+6
+// PRIME NUMBER WITHIN A CERTAIN RANGE
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int c,i,j;
+        for(j = n1; j<=n2; j++){
+            c=0;
+            for(i = 2; i <= j/2; i++){
+                if(j%i==0){
+                c++;
+                break;}
+            }
+            if(c==0)
+            System.out.print(j + " ");
+        }
+    }
+}
+
+7
+// DISARIUM NUMBER
+// i/p                  o/p
+// 135                  Disarium Number
+// 123                  Not a Disarium Number
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n;
+        int c = 0;
+        int d, sum = 0;
+        while(n != 0) {
+            n = n / 10;
+            c++;
+        }
+        n = temp;
+        while(n != 0) {
+            d = n % 10;
+            sum = sum + (int)Math.pow(d, c);
+            c--;
+            n = n / 10;
+        }
+        if(temp == sum)
+            System.out.print("Disarium Number");
+        else
+            System.out.print("Not a Disarium Number");
+    }
+}
+
+8
+// BUZZ NUMBER
+// A number is a Buzz Number if it is divisible by 7 or ends with 7.
+// i/p                  o/p
+// 14                   Buzz Number
+// 27                   Not a Buzz Number
+// 35                   Buzz Number
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n % 7 == 0 || n % 10 == 7)
+            System.out.print("Buzz Number");
+        else
+            System.out.print("Not a Buzz Number");
+    }
+}
+
+9
+// SPY NUMBER
+// If sum of digits = product of digits, it is a Spy Number.
+// i/p                  o/p
+// 1124                 Spy Number
+// 123                  Not a Spy Number
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        int product = 1;
+        int d;
+        while(n != 0) {
+            d = n % 10;
+            sum = sum + d;
+            product = product * d;
+            n = n / 10;
+        }
+        if(sum == product)
+            System.out.print("Spy Number");
+        else
+            System.out.print("Not a Spy Number");
+    }
+}
+
+10
+// HAPPY NUMBER
+// i/p                  o/p
+// 19                   Happy Number
+// 2                    Not a Happy Number
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while(n != 1 && n != 4) {
+            int sum = 0;
+            int d;
+            while(n != 0) {
+                d = n % 10;
+                sum = sum + d * d;
+                n = n / 10;
+            }
+            n = sum;
+        }
+        if(n == 1)
+            System.out.print("Happy Number");
+        else
+            System.out.print("Not a Happy Number");
+    }
+}
