@@ -93,3 +93,55 @@ class Main {
         System.out.println("Sum = " + sum);
     }
 }
+//MAXIMUM ELEMENT IN A DOUBLY LINKED LIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.maximum();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            return;
+        }
+        Node temp = first;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = n;
+        n.prev = temp;
+    }
+    void maximum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        int max = first.data;
+        Node temp = first.next;
+        while (temp != null) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+            temp = temp.next;
+        }
+        System.out.println("Maximum = " + max);
+    }
+}
