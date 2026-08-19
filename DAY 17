@@ -1,3 +1,4 @@
+1
 //Circular singly Linked List
 import java.util.*;
 class Node{
@@ -92,6 +93,7 @@ class Main{
         }while(temp!=first);
     }
 }
+3
 //Sum of the elements in Circular Singly linked list
 import java.util.*;
 class Node {
@@ -149,6 +151,7 @@ class Main {
         }
     }
 }
+4
 // SUM OF ELEMENTS IN CIRCULAR DOUBLY LINKEDLIST
 import java.util.*;
 class Node{
@@ -202,7 +205,8 @@ class Main{
         System.out.println("Sum = " + sum);
     }
 }
-// Circular Singly Linked List - Sorting
+5
+// SORT ELEMENTS IN CIRCULAR SINGLY LINKEDLIST
 import java.util.*;
 class Node {
     int data;
@@ -213,21 +217,18 @@ class Node {
     }
 }
 class Main {
+    Node first = null;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Main m = new Main();
         int d = sc.nextInt();
-        while (d != 1) {
+        while (d != -1) {
             m.insert(d);
             d = sc.nextInt();
         }
-        System.out.println("Before sorting:");
-        m.display();
         m.sort();
-        System.out.println("\nAfter sorting:");
         m.display();
     }
-    Node first = null;
     void insert(int d) {
         Node n = new Node(d);
         if (first == null) {
@@ -242,7 +243,7 @@ class Main {
         }
     }
     void sort() {
-        if (first == null || first.next == first)
+        if (first == null)
             return;
         Node i = first;
         do {
@@ -256,11 +257,11 @@ class Main {
                 j = j.next;
             }
             i = i.next;
-        } while (i.next != first);
+        } while (i != first);
     }
     void display() {
         if (first == null) {
-            System.out.print("List is empty");
+            System.out.println("List is empty");
             return;
         }
         Node temp = first;
@@ -270,54 +271,219 @@ class Main {
         } while (temp != first);
     }
 }
-//DOUBLY LINKED LIST-SORTING
+
+6
+// MAXIMUM ELEMENT IN CIRCULAR SINGLY LINKEDLIST
 import java.util.*;
 class Node {
     int data;
-    Node prev;
     Node next;
     Node(int d) {
         this.data = d;
-        this.prev = null;
         this.next = null;
     }
 }
 class Main {
+    Node first = null;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Main m = new Main();
         int d = sc.nextInt();
-        while (d != 1) {
+        while (d != -1) {
             m.insert(d);
             d = sc.nextInt();
         }
-        System.out.println("Before sorting:");
-        m.display();
-        m.sort();
-        System.out.println("\nAfter sorting:");
-        m.display();
+        m.maximum();
     }
-    Node first = null;
     void insert(int d) {
         Node n = new Node(d);
         if (first == null) {
             first = n;
+            n.next = first;
         } else {
             Node temp = first;
-            while (temp.next != null) {
+            while (temp.next != first)
                 temp = temp.next;
-            }
+            temp.next = n;
+            n.next = first;
+        }
+    }
+    void maximum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        int max = first.data;
+        Node temp = first.next;
+        while (temp != first) {
+            if (temp.data > max)
+                max = temp.data;
+            temp = temp.next;
+        }
+        System.out.println(max);
+    }
+}
+
+7
+// INSERT ELEMENT IN CIRCULAR SINGLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        int x = sc.nextInt();
+        m.insert(x);
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.next = first;
+        }
+    }
+    void display() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node temp = first;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+}
+
+8
+// REVERSE ELEMENTS IN CIRCULAR SINGLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.reverse();
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.next = first;
+        }
+    }
+    void reverse() {
+        if (first == null || first.next == first)
+            return;
+        Node prev = null;
+        Node current = first;
+        Node next;
+        do {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        } while (current != first);
+        first.next = prev;
+        first = prev;
+    }
+    void display() {
+        Node temp = first;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+}
+
+9
+// SORT ELEMENTS IN CIRCULAR DOUBLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.sort();
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
             temp.next = n;
             n.prev = temp;
+            n.next = first;
+            first.prev = n;
         }
     }
     void sort() {
-        if (first == null || first.next == null)
+        if (first == null)
             return;
         Node i = first;
-        while (i != null) {
+        do {
             Node j = i.next;
-            while (j != null) {
+            while (j != first) {
                 if (i.data > j.data) {
                     int temp = i.data;
                     i.data = j.data;
@@ -326,17 +492,186 @@ class Main {
                 j = j.next;
             }
             i = i.next;
+        } while (i != first);
+    }
+    void display() {
+        Node temp = first;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+}
+
+10
+// MAXIMUM ELEMENT IN CIRCULAR DOUBLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.maximum();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.prev = temp;
+            n.next = first;
+            first.prev = n;
+        }
+    }
+    void maximum() {
+        if (first == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        int max = first.data;
+        Node temp = first.next;
+        while (temp != first) {
+            if (temp.data > max)
+                max = temp.data;
+            temp = temp.next;
+        }
+        System.out.println(max);
+    }
+}
+
+11
+// INSERT ELEMENT IN CIRCULAR DOUBLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        int x = sc.nextInt();
+        m.insert(x);
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.prev = temp;
+            n.next = first;
+            first.prev = n;
         }
     }
     void display() {
         if (first == null) {
-            System.out.print("List is empty");
+            System.out.println("List is empty");
             return;
         }
         Node temp = first;
-        while (temp != null) {
+        do {
             System.out.print(temp.data + " ");
             temp = temp.next;
+        } while (temp != first);
+    }
+}
+
+12
+// REVERSE ELEMENTS IN CIRCULAR DOUBLY LINKEDLIST
+import java.util.*;
+class Node {
+    int data;
+    Node next, prev;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+class Main {
+    Node first = null;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
         }
+        m.reverse();
+        m.display();
+    }
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+            n.prev = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.prev = temp;
+            n.next = first;
+            first.prev = n;
+        }
+    }
+    void reverse() {
+        if (first == null || first.next == first)
+            return;
+        Node temp = first;
+        do {
+            Node t = temp.next;
+            temp.next = temp.prev;
+            temp.prev = t;
+            temp = t;
+        } while (temp != first);
+        first = first.next;
+    }
+    void display() {
+        Node temp = first;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
     }
 }
