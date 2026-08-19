@@ -92,6 +92,63 @@ class Main{
         }while(temp!=first);
     }
 }
+//Sum of the elements in Circular Singly linked list
+import java.util.*;
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != -1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        m.display();
+        System.out.println("\nSum = " + m.sum());
+    }
+    Node first = null;
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = n;
+        }
+    }
+    int sum() {
+        int total = 0;
+        Node temp = first;
+        while (temp != null) {
+            total = total + temp.data;
+            temp = temp.next;
+        }
+        return total;
+    }
+    void display() {
+
+        if (first == null) {
+            System.out.print("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+}
 // SUM OF ELEMENTS IN CIRCULAR DOUBLY LINKEDLIST
 import java.util.*;
 class Node{
@@ -143,5 +200,143 @@ class Main{
             temp = temp.next;
         } while (temp != first);
         System.out.println("Sum = " + sum);
+    }
+}
+// Circular Singly Linked List - Sorting
+import java.util.*;
+class Node {
+    int data;
+    Node next;
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        System.out.println("Before sorting:");
+        m.display();
+        m.sort();
+        System.out.println("\nAfter sorting:");
+        m.display();
+    }
+    Node first = null;
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+            n.next = first;
+        } else {
+            Node temp = first;
+            while (temp.next != first)
+                temp = temp.next;
+            temp.next = n;
+            n.next = first;
+        }
+    }
+    void sort() {
+        if (first == null || first.next == first)
+            return;
+        Node i = first;
+        do {
+            Node j = i.next;
+            while (j != first) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+                j = j.next;
+            }
+            i = i.next;
+        } while (i.next != first);
+    }
+    void display() {
+        if (first == null) {
+            System.out.print("List is empty");
+            return;
+        }
+        Node temp = first;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != first);
+    }
+}
+//DOUBLY LINKED LIST-SORTING
+import java.util.*;
+class Node {
+    int data;
+    Node prev;
+    Node next;
+    Node(int d) {
+        this.data = d;
+        this.prev = null;
+        this.next = null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Main m = new Main();
+        int d = sc.nextInt();
+        while (d != 1) {
+            m.insert(d);
+            d = sc.nextInt();
+        }
+        System.out.println("Before sorting:");
+        m.display();
+        m.sort();
+        System.out.println("\nAfter sorting:");
+        m.display();
+    }
+    Node first = null;
+    void insert(int d) {
+        Node n = new Node(d);
+        if (first == null) {
+            first = n;
+        } else {
+            Node temp = first;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = n;
+            n.prev = temp;
+        }
+    }
+    void sort() {
+        if (first == null || first.next == null)
+            return;
+        Node i = first;
+        while (i != null) {
+            Node j = i.next;
+            while (j != null) {
+                if (i.data > j.data) {
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+                j = j.next;
+            }
+            i = i.next;
+        }
+    }
+    void display() {
+        if (first == null) {
+            System.out.print("List is empty");
+            return;
+        }
+        Node temp = first;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
     }
 }
